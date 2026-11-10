@@ -1,6 +1,6 @@
 package Portal;
 
-// INHERITANCE: Student extends Person and reuses the common personal-information fields and methods.
+
 public class Student extends Person {
 // ENCAPSULATION: private fields keep student-specific data from being accessed directly outside this class.
     private String studentID;
