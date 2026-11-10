@@ -3,11 +3,12 @@ package Portal;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class Main {
     private static final int MAX_LOGIN_ATTEMPTS = 3;
     private static int loginAttempts = 0;
-// ENCAPSULATION: private static field stores the current admin password for this demo.
+
     private static String adminPassword = "Borlasa123";
     
     public static boolean changeAdminPassword(String currentPassword, String newPassword){
@@ -137,7 +138,7 @@ public class Main {
                 int remaining = MAX_LOGIN_ATTEMPTS-loginAttempts;
                 if (remaining>0){
                 JOptionPane.showMessageDialog(frame,
-                        "Incorrect username or password. Attempts remaining." + remaining,
+                        "Incorrect username or password. Attempts remaining: " + remaining,
                         "Login Failed", JOptionPane.ERROR_MESSAGE);
                 password.setText("");
                 password.requestFocusInWindow();
@@ -150,8 +151,8 @@ public class Main {
                 }
             }
         };
-        login.addActionListener(e -> authenticate.run());
-        password.addActionListener(e -> authenticate.run());
+        login.addActionListener((ActionEvent e) -> authenticate.run());
+        password.addActionListener((ActionEvent e) -> authenticate.run());
 
         background.add(card);
         frame.setContentPane(background);
