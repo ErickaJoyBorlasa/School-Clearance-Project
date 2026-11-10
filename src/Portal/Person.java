@@ -1,6 +1,6 @@
 package Portal;
 
-// ABSTRACTION: abstract parent class for people; it defines shared personal details and requires a person type.
+
 public abstract class Person {
 // ENCAPSULATION: private fields protect personal information from direct outside access.
     private String firstName;
